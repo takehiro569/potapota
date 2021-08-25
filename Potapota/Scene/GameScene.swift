@@ -46,6 +46,7 @@ class GameScene: SKScene {
     }
     
     var currentTopPotaPosition: LogicalPosition {
+        // TODO: bottomに依存するように修正してみる
         guard let topPota = currentTsumo?.topPota else { return LogicalPosition(x: 2, y: 11) }
         let calibrationPoint: (CGFloat, CGFloat) = (topPota.position.x + model.fieldFrame.midX, topPota.position.y + model.fieldFrame.midY)
         let xPoint = (calibrationPoint.0 >= 0 ? calibrationPoint.0 : 0) / model.potaSize.width
